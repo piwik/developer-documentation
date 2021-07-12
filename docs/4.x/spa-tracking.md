@@ -37,6 +37,15 @@ _paq.push(['trackPageView']);
 
 Note: we recommend you use [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) instead of Custom Variables as they will be deprecated in the future.
 
+### Resetting previously set custom dimensions
+
+Similar to Custom Variables, you also need to unset [Custom Dimensions](https://matomo.org/docs/custom-dimensions/) when changing the page as they would otherwise be tracked again.
+
+```javascript
+_paq.push(['deleteCustomDimension', 1]);
+_paq.push(['trackPageView']);
+```
+
 ### Updating the referrer
 
 Depending on whether you want to track the previous page as a referrer for the new page view, you should update the referrer URL by setting it to the previous page URL:
